@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Mountains of Christmas", serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(255, 0, 0);
+  background: radial-gradient(
+    circle,
+    rgb(209, 1, 1) 15%,
+    rgb(134, 1, 1) 53%,
+    rgb(41, 0, 0) 90%
+  );
+  cursor: url(../img/cursor.png), default;
+}
+
+.contenedor {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.contenedor::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background: url(../img/tree.png);
+  background-size: cover;
+  width: 100%;
+  height: 350px;
+  z-index: 1;
+}
+
+.contenedor .circulo {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgb(235, 235, 235) 5%,
+    rgba(214, 214, 214, 0.96) 16%,
+    rgba(191, 191, 191, 0.926) 30%,
+    rgba(255, 255, 255, 0) 47%
+  );
+}
+
+.contenedor .circulo::before {
+  content: "";
+  position: absolute;
+  background: url(../img/santa.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 800px;
+  z-index: 2;
+  inset: -600px;
+  animation: animacionSanta 5s ease-in-out infinite;
+}
+
+.contenedor .nieve {
+  position: relative;
+  display: flex;
+}
+
+.contenedor .nieve span {
+  position: relative;
+  min-width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0 0.8vw;
+  box-shadow: -100px 20px 5px #fff, 100px 20px 10px #fff;
+  animation: animacionNieve 15s linear infinite;
+  animation-duration: calc(70s / var(--i));
+}
+
+.contenedor .nieve span:nth-child(even) {
+  min-width: 10px;
+  height: 10px;
+}
+
+.contenedor .contenedor-timer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer {
+  display: flex;
+  font-size: 52px;
+  color: #fafafa;
+  letter-spacing: 2px;
+  font-weight: bold;
+  position: relative;
+  margin-top: 15%;
+  z-index: 4;
+  text-shadow: 2px 2px 2px #000;
+  gap: 30px;
+}
+
+.item {
+  display: flex;
+  padding: 2px;
+}
+
+.timer .item p {
+  padding: 10px;
+}
+
+.timer .item .item-text {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes animacionNieve {
+  0% {
+    transform: translateY(-10vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes animacionSanta {
+  0% {
+    transform: translateY(-25px);
+  }
+
+  50% {
+    transform: translateY(25px);
+  }
+
+  100% {
+    transform: translateY(-25px);
+  }
+}
