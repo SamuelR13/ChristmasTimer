@@ -6,8 +6,8 @@ const minutoTimer = document.querySelector("#minuto-timer");
 const segundoTimer = document.querySelector("#segundo-timer");
 
 contNieve.innerHTML = "";
-// audioNav.play();
-// audioNav.loop = true;
+audioNav.play();
+audioNav.loop = true;
 
 function generarNieve() {
   Array.from({ length: 50 }).forEach((element) => {
